@@ -1,0 +1,33 @@
+package inventory;
+
+public class Item {
+
+	String itemName;
+	int itemID;
+	String itemType;
+	double itemSize;
+	int quantity;
+	int quantityThreshold;
+	String location;
+	String supplier;
+	
+	public void addQuantity(int amount) {
+     
+    }
+	
+	public void subQuantity(int amount) {
+ 
+    }
+	
+	public boolean checkQuantity(int belowThreshold) {
+		
+    }
+	
+	public void addOrder(PurchaseOrder order) {
+		
+    }
+	
+	public void notifyOrder() {
+        System.out.println("Order notification");
+    }
+}
