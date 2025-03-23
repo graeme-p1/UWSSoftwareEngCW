@@ -1,0 +1,10 @@
+package inventory;
+
+public class Stock {
+	
+    private int itemID;
+
+    public Item createItem(String iName, int iID, String iType, double iSize, int iQuantity, int iThreshold, String iLocation, String iSupplier) {
+        return new Item();
+    }
+}
