@@ -1,0 +1,24 @@
+package inventory;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PurchaseOrder {
+	private List<Item> orderList;
+
+    public PurchaseOrder() {
+        orderList = new ArrayList<>();
+    }
+
+    public void generatePo() {
+        System.out.println("Generating purchase order...");
+    }
+
+    public void checkOrderList() {
+        System.out.println("Checking order list...");
+    }
+
+    public void addOrder(Item item) {
+        orderList.add(item);
+    }
+}
