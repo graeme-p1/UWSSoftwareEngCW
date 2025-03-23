@@ -1,0 +1,17 @@
+package access;
+
+public class Admin {
+    private boolean adminAccess;
+
+    public void checkAdminAccess() {
+        
+    }
+
+    public boolean getAdminAccess() {
+        return adminAccess;
+    }
+
+    public void setAdminAccess() {
+    	
+    }
+}
