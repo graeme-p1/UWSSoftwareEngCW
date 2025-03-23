@@ -1,0 +1,19 @@
+package inventory;
+
+public class WarehouseManager {
+    public void createItem() {
+        
+    }
+
+    public void generatePo() {
+       
+    }
+
+    public void checkOrderList() {
+       
+    }
+
+    public void checkQuantity() {
+        
+    }
+}
