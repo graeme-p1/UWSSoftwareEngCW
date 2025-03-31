@@ -2,32 +2,40 @@ package inventory;
 
 public class Item {
 
-	String itemName;
-	int itemID;
-	String itemType;
-	double itemSize;
-	int quantity;
-	int quantityThreshold;
-	String location;
-	String supplier;
-	
-	public void addQuantity(int amount) {
-     
+	private String itemName;
+    private static int itemIDCounter = 1;
+    private int itemID;
+    private String itemType;
+    private double itemSize;
+    private int quantity;
+    private int quantityThreshold;
+    private String location;
+    private String supplierName;
+
+    public Item(String name, String type, double size, int quantity, int threshold, String location, String supplier) {
+        this.itemName = name;
+        this.itemID = itemIDCounter++;
+        this.itemType = type;
+        this.itemSize = size;
+        this.quantity = quantity;
+        this.quantityThreshold = threshold;
+        this.location = location;
+        this.supplierName = supplier;
     }
-	
-	public void subQuantity(int amount) {
- 
+    
+    public void addQuantity(int quantity) {
+        this.quantity += quantity;
     }
-	
-	public boolean checkQuantity(int belowThreshold) {
-		
+    
+    public void subQuantity(int quantity) {
+        this.quantity -= quantity;
     }
-	
-	public void addOrder(PurchaseOrder order) {
-		
+    
+    public boolean checkQuantity(int threshold) {
+        return this.quantity < threshold;
     }
-	
-	public void notifyOrder() {
-        System.out.println("Order notification");
+    
+    public String getItemName() {
+        return this.itemName;
     }
 }
