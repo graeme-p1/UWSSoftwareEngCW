@@ -1,10 +1,35 @@
 package inventory;
 
-public class Stock {
-	
-    private int itemID;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Item createItem(String iName, int iID, String iType, double iSize, int iQuantity, int iThreshold, String iLocation, String iSupplier) {
-        return new Item();
+class Stock {
+    private static Stock instance;
+    private List<Item> items;
+    
+    private Stock() {
+        items = new ArrayList<>();
+    }
+    
+    public static Stock getInstance() {
+        if (instance == null) {
+            instance = new Stock();
+        }
+        return instance;
+    }
+    
+    public Item createItem(String name, String type, double size, int quantity, int threshold, String location, String supplier) {
+        Item item = new Item(name, type, size, quantity, threshold, location, supplier);
+        items.add(item);
+        return item;
+    }
+    
+    public Item getItem(String name) {
+        for (Item item : items) {
+            if (item.getItemName().equals(name)) {
+                return item;
+            }
+        }
+        return null;
     }
 }
