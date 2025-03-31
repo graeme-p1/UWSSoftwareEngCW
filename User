@@ -1,31 +1,61 @@
 package access;
 
-class User {
+import java.util.ArrayList;
+import java.util.List;
 
+public class User implements IAdmin {
+    private static List<User> userDetails = new ArrayList<>();
     private String username;
     private String password;
+    private boolean adminAccess;
     private boolean loggedIn;
 
-    public User(String username, String password) {
+    public User(String username, String password, boolean adminAccess) {
         this.username = username;
         this.password = password;
+        this.adminAccess = adminAccess;
         this.loggedIn = false;
     }
 
-    public void login(String username, String password) {
-        
+    public boolean login(String username, String password) {
+        for (User user : userDetails) {
+            if (user.username.equals(username) && user.password.equals(password)) {
+                this.loggedIn = true;
+                System.out.println("Login successful!");
+                return true;
+            }
+        }
+        System.out.println("Invalid username or password.");
+        return false;
     }
 
-    public void register() {
-    	
+    public void register(String username, String password, boolean adminAccess) {
+        User newUser = new User(username, password, adminAccess);
+        userDetails.add(newUser);
+        System.out.println("User registered successfully!");
     }
 
-    public boolean isLoggedIn() {
-        return loggedIn;
+    @Override
+    public void checkAdminAccess() {
+        if (loggedIn) {
+            if (adminAccess) {
+                System.out.println(username + " has admin access.");
+            } else {
+                System.out.println(username + " does not have admin access.");
+            }
+        } else {
+            System.out.println("Login required to check admin access.");
+        }
     }
 
-    public String getUsername() {
-        return username;
+    @Override
+    public boolean getAdminAccess() {
+        return adminAccess;
+    }
+
+    @Override
+    public void setAdminAccess(boolean access) {
+        this.adminAccess = access;
     }
 }
 
