@@ -1,0 +1,13 @@
+package inventory;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Alert {
+    private List<Item> orderList = new ArrayList<>();
+    
+    public String createAlert(List<Item> orderList) {
+        this.orderList = orderList;
+        return "Alert Created for Low Stock";
+    }
+}
