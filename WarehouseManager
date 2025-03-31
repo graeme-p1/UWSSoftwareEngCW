@@ -1,19 +1,25 @@
 package inventory;
 
-public class WarehouseManager {
-    public void createItem() {
-        
-    }
+import java.util.List;
 
-    public void generatePo() {
-       
+class WarehouseManager {
+    private Stock stock = Stock.getInstance();
+    
+    public Item createItem(String name, String type, double size, int quantity, int threshold, String location, String supplier) {
+        return stock.createItem(name, type, size, quantity, threshold, location, supplier);
     }
-
-    public void checkOrderList() {
-       
+    
+    public Item getItem(String name) {
+        return stock.getItem(name);
     }
-
-    public void checkQuantity() {
-        
+    
+    public String createAlert(List<Item> orderList) {
+        Alert alert = new Alert();
+        return alert.createAlert(orderList);
+    }
+    
+    public String createPo(List<Item> orderList) {
+        PurchaseOrder po = new PurchaseOrder();
+        return po.createPo(orderList);
     }
 }
