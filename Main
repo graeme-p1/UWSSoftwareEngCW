@@ -1,0 +1,45 @@
+package inventory;
+
+import access.User;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        // User Authentication
+        User adminUser = new User("admin", "admin123", true);
+        User normalUser = new User("user", "user123", false);
+
+        adminUser.register("admin", "admin123", true);
+        normalUser.register("user", "user123", false);
+
+        if (adminUser.login("admin", "admin123")) {
+            adminUser.checkAdminAccess();
+        }
+
+        if (normalUser.login("user", "user123")) {
+            normalUser.checkAdminAccess();
+        }
+
+        // Inventory Management
+        WarehouseManager wm = new WarehouseManager();
+
+        // Create Items
+        Item item1 = wm.createItem("Laptop", "Electronics", 2.5, 10, 5, "A1", "TechSupplier");
+        Item item2 = wm.createItem("Phone", "Electronics", 0.5, 3, 5, "B2", "PhoneSupplier");
+
+        // Check stock
+        System.out.println("Item: " + item1.getItemName() + " created.");
+        System.out.println("Item: " + item2.getItemName() + " created.");
+
+        // Check and create an alert
+        List<Item> lowStockItems = new ArrayList<>();
+        if (item2.checkQuantity(5)) {
+            lowStockItems.add(item2);
+        }
+
+        if (!lowStockItems.isEmpty()) {
+            System.out.println(wm.createAlert(lowStockItems));
+        }
+    }
+}
