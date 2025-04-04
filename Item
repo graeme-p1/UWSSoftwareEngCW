@@ -47,12 +47,12 @@ public class Item {
         String sizeStr = Double.toString(this.itemSize);
         String quantityStr = Integer.toString(this.quantity);
         String thresholdStr = Integer.toString(this.quantityThreshold);
-        OrderList.orderList.add(this.itemName);
-        OrderList.orderList.add(this.itemType);
-        OrderList.orderList.add(sizeStr);
-        OrderList.orderList.add(quantityStr);
-        OrderList.orderList.add(thresholdStr);
-        OrderList.orderList.add(this.location);
-        OrderList.orderList.add(this.supplierName);
+        Order.orderList.add(this.itemName);
+        Order.orderList.add(this.itemType);
+        Order.orderList.add(sizeStr);
+        Order.orderList.add(quantityStr);
+        Order.orderList.add(thresholdStr);
+        Order.orderList.add(this.location);
+        Order.orderList.add(this.supplierName);
     }
 }
