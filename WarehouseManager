@@ -13,13 +13,11 @@ class WarehouseManager {
         return stock.getItem(name);
     }
     
-    public String createAlert(List<Item> orderList) {
+    public void createAlert() {
         Alert alert = new Alert();
-        return alert.createAlert(orderList);
     }
     
-    public String createPo(List<Item> orderList) {
+    public void createPo() {
         PurchaseOrder po = new PurchaseOrder();
-        return po.createPo(orderList);
     }
 }
