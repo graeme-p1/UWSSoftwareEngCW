@@ -1,0 +1,31 @@
+package inventory;
+
+import junit.framework.TestCase;
+
+public class StockTest extends TestCase {
+
+    private Stock stock; // Declare the stock variable
+
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+        stock = new Stock();
+    }
+
+        public void testCreateItem() {
+        Item newitem = stock.createItem("Chair", "Furniture", 5.0, 10, 3, "A1", "ChairMakers");
+            // Expected result
+
+
+            System.out.println("Expected: 1 Chair Furniture 5.0 10 3 A1 ChairMakers");
+
+            // Result
+        System.out.println("Result: " + newitem.itemID + " " + newitem.itemName + " " + newitem.itemType + " " + newitem.itemSize + " " + newitem.quantity + " " + newitem.quantityThreshold + " " + newitem.location + " " + newitem.supplierName);
+    }
+
+    public void testGetItem() {
+        stock.createItem("Desk", "Furniture", 15.0, 7, 2, "B2", "DeskCo");
+        Item foundItem = stock.getItem("Desk");
+        System.out.println(foundItem);
+    }
+}
