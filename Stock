@@ -6,24 +6,24 @@ import java.util.List;
 class Stock {
     private static Stock instance;
     private List<Item> items;
-    
-    private Stock() {
+
+    Stock() {
         items = new ArrayList<>();
     }
-    
+
     public static Stock getInstance() {
         if (instance == null) {
             instance = new Stock();
         }
         return instance;
     }
-    
+
     public Item createItem(String name, String type, double size, int quantity, int threshold, String location, String supplier) {
-        Item item = new Item(name, type, size, quantity, threshold, location, supplier);
-        items.add(item);
-        return item;
+        Item newItem = new Item(name, type, size, quantity, threshold, location, supplier);
+        items.add(newItem);
+        return newItem;
     }
-    
+
     public Item getItem(String name) {
         for (Item item : items) {
             if (item.getItemName().equals(name)) {
