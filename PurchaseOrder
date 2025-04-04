@@ -8,7 +8,6 @@ class PurchaseOrder {
         String quantity = OrderList.orderList.get(3);
         int quantityInt = Integer.parseInt(quantity);
         String supplier = OrderList.orderList.getLast();
-        System.out.println();
         System.out.println("Printing purchase order");
         System.out.println("Item name: " + name);
         System.out.println("Item type: " + type);
