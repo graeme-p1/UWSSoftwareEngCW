@@ -5,7 +5,6 @@ public class Alert {
     public String createAlert() {
         String name = OrderList.orderList.getFirst();
         String supplier = OrderList.orderList.getLast();
-        System.out.println();
         System.out.println("Please be aware " + name + " from " + supplier + " is currently below quantity threshold.");
     }
 }
