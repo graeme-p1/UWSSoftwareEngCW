@@ -1,13 +1,18 @@
 package inventory;
 
-import java.util.ArrayList;
-import java.util.List;
-
 class PurchaseOrder {
-    private List<Item> orderList = new ArrayList<>();
     
-    public String createPo(List<Item> orderList) {
-        this.orderList = orderList;
-        return "Purchase Order Created";
+    public String createPo() {
+        String name = OrderList.orderList.getFirst();
+        String type = OrderList.orderList.get(1);
+        String quantity = OrderList.orderList.get(3);
+        int quantityInt = Integer.parseInt(quantity);
+        String supplier = OrderList.orderList.getLast();
+        System.out.println();
+        System.out.println("Printing purchase order");
+        System.out.println("Item name: " + name);
+        System.out.println("Item type: " + type);
+        System.out.println("Current quantity: " + quantityInt);
+        System.out.println("Item supplier: " + supplier);
     }
 }
