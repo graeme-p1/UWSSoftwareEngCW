@@ -3,11 +3,11 @@ package inventory;
 class PurchaseOrder {
     
     public String createPo() {
-        String name = OrderList.orderList.getFirst();
-        String type = OrderList.orderList.get(1);
-        String quantity = OrderList.orderList.get(3);
+        String name = Order.orderList.getFirst();
+        String type = Order.orderList.get(1);
+        String quantity = Order.orderList.get(3);
         int quantityInt = Integer.parseInt(quantity);
-        String supplier = OrderList.orderList.getLast();
+        String supplier = Order.orderList.getLast();
         System.out.println("Printing purchase order");
         System.out.println("Item name: " + name);
         System.out.println("Item type: " + type);
