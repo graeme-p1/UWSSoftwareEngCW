@@ -1,13 +1,11 @@
 package inventory;
 
-import java.util.ArrayList;
-import java.util.List;
-
-class Alert {
-    private List<Item> orderList = new ArrayList<>();
+public class Alert {
     
-    public String createAlert(List<Item> orderList) {
-        this.orderList = orderList;
-        return "Alert Created for Low Stock";
+    public String createAlert() {
+        String name = OrderList.orderList.getFirst();
+        String supplier = OrderList.orderList.getLast();
+        System.out.println();
+        System.out.println("Please be aware " + name + " from " + supplier + " is currently below quantity threshold.");
     }
 }
