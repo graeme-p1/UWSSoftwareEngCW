@@ -35,6 +35,14 @@ public class Item {
         return this.quantity < threshold;
     }
 
+    public void notifyAlert() {
+        if (quantity < quantityThreshold){
+            System.out.println("The item is below quantity threshold");
+        } else {
+            System.out.println("The item is within quantity threshold");
+        }
+    }
+
     public String getItemName() {
         return this.itemName;
     }
