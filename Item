@@ -42,4 +42,17 @@ public class Item {
     public int getQuantity() {
         return this.quantity;
     }
+
+    public void createList() {
+        String sizeStr = Double.toString(this.itemSize);
+        String quantityStr = Integer.toString(this.quantity);
+        String thresholdStr = Integer.toString(this.quantityThreshold);
+        OrderList.orderList.add(this.itemName);
+        OrderList.orderList.add(this.itemType);
+        OrderList.orderList.add(sizeStr);
+        OrderList.orderList.add(quantityStr);
+        OrderList.orderList.add(thresholdStr);
+        OrderList.orderList.add(this.location);
+        OrderList.orderList.add(this.supplierName);
+    }
 }
