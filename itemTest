@@ -1,0 +1,54 @@
+package inventory;
+
+import junit.framework.TestCase;
+public class ItemTest extends TestCase {
+
+    private Item newitem;
+
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+        newitem = new Item("Table", "Furniture", 12.0, 5, 3, "C3", "WoodWorks");
+    }
+
+    public void testAddQuantity() {
+
+        newitem.addQuantity(3);
+
+        // Expected result
+
+        int expectedQuantity = 8;
+
+        // Result
+
+        System.out.println("There was 5 tables, there is now " + newitem.quantity + " tables");
+    }
+
+    public void testSubQuantity() {
+        newitem.subQuantity(2);
+
+        // Expected result
+
+        int expectedQuantity = 3;
+
+        // Result
+
+        System.out.println("There was 5 tables, there is now " + newitem.quantity + " tables");
+    }
+
+    public void testCheckQuantity() {
+        System.out.println("There are " + newitem.quantity + " tables");
+    }
+
+    public void testGetItemName() {
+        // Expected result
+
+        String expectedName = "Table";
+        System.out.println("Expected name: " + expectedName);
+
+        // Result
+
+        System.out.println("Result: " + newitem.itemName);
+
+    }
+}
